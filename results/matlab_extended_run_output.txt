@@ -1,0 +1,78 @@
+Results will be written to: C:\Users\user\Documents\MATLAB\DGA_results_matlab
+Independent records: 465 (from 189 transformers/cases)
+
+Experiment 1: confusion matrix and importance
+RF pooled accuracy over all test folds: 0.822
+    class     rf_recall    rf_precision    duval_recall
+    ______    _________    ____________    ____________
+
+    {'PD'}     0.72523       0.85185         0.37838   
+    {'D1'}     0.69231       0.71591         0.71429   
+    {'D2'}     0.87919       0.81535         0.63087   
+    {'T1'}     0.85886       0.85886          0.4955   
+    {'T2'}     0.78333       0.73057             0.5   
+    {'T3'}     0.90705       0.92484         0.94231   
+
+
+Experiment 2: single source versus other sources
+source set 1 only (n=240): 0.944
+all other sources (n=349): 0.807
+
+Experiment 3: same-transformer leakage inside NCEPR
+NCEPR records: 351, transformers: 107
+record-wise: 0.932 +/- 0.023   transformer-wise: 0.720 +/- 0.116
+
+Experiment 4: accuracy versus coverage
+    target_coverage    threshold    acc_589_cv    coverage_589    acc_independent    coverage_independent
+    _______________    _________    __________    ____________    _______________    ____________________
+
+            1                 0      0.83758              1           0.55484                    1       
+          0.9              0.51      0.86872        0.90096           0.58852              0.89892       
+          0.8              0.59       0.9024        0.80023           0.60833              0.77419       
+          0.7           0.67667       0.9232        0.70006            0.6142              0.69677       
+          0.6           0.76562      0.94434        0.59989           0.62602              0.52903       
+          0.5           0.83411      0.96041        0.50028           0.62222              0.48387       
+
+
+Experiment 5: local records and conformal sets
+  repetition 1 of 20 done
+  repetition 2 of 20 done
+  repetition 3 of 20 done
+  repetition 4 of 20 done
+  repetition 5 of 20 done
+  repetition 6 of 20 done
+  repetition 7 of 20 done
+  repetition 8 of 20 done
+  repetition 9 of 20 done
+  repetition 10 of 20 done
+  repetition 11 of 20 done
+  repetition 12 of 20 done
+  repetition 13 of 20 done
+  repetition 14 of 20 done
+  repetition 15 of 20 done
+  repetition 16 of 20 done
+  repetition 17 of 20 done
+  repetition 18 of 20 done
+  repetition 19 of 20 done
+  repetition 20 of 20 done
+    local_records    acc_589_plus_local    sd_589_plus_local    acc_weighted5    sd_weighted5    acc_local_only    sd_local_only
+    _____________    __________________    _________________    _____________    ____________    ______________    _____________
+
+           0              0.55263              0.087794            0.55507          0.09103             NaN               NaN   
+          10              0.54081              0.087435            0.55418         0.099029             NaN               NaN   
+          25              0.54318              0.083085            0.58157         0.098612         0.65093           0.11453   
+          50              0.57908              0.088631            0.61995         0.089534         0.67177           0.10745   
+         100              0.61658              0.092388            0.65409         0.079017         0.69648          0.078919   
+         150              0.64676               0.10659            0.67504         0.095493         0.69743          0.090335   
+
+Duval Triangle on the same test sets: 0.476 +/- 0.111
+           calibration           observed_coverage    sd_coverage    mean_set_size
+    _________________________    _________________    ___________    _____________
+
+    "calibrated_on_589_oof"            0.6223            0.1081         1.2426    
+    "calibrated_on_50_local"          0.88571           0.11779          3.819    
+    "calibrated_on_100_local"         0.87305            0.1235         3.3916    
+
+
+All experiments finished. Results are in C:\Users\user\Documents\MATLAB\DGA_results_matlab
+
