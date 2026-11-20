@@ -1,0 +1,28 @@
+Output of DGA_Rigorous_Eval.m with RUN_NESTED = false. Lines of the per-record 3-type print in part D were removed (an earlier version of the script printed a wrong value there, fixed since); the independent-record result is in matlab_extended_run_output.txt.
+
+Duval Triangle 1 (simplified): accuracy 0.628 (all rows)
+IEC ratio table: accuracy 0.469 (all rows), coverage 0.643, accuracy on classified 0.728
+
+TC10: 116 cases; removed 115 matching rows from training, 474 left
+TC10 RF  : 6-class 0.745, 3-type 0.919 (inner CV 0.842)
+TC10 KNN : 6-class 0.655, 3-type 0.810 (inner CV 0.713)
+TC10 SVM : 6-class 0.716, 3-type 0.845 (inner CV 0.785)
+TC10 ANN : 6-class 0.709, 3-type 0.866 (inner CV 0.785)
+TC10 Duval Triangle: 6-class 0.879, 3-type 0.974
+TC10 IEC ratios:     6-class 0.517, 3-type 0.802
+
+Part C: leakage and label-origin experiments (random forest)
+A correct protocol, pooled 589 rows       : 0.832
+B SMOTE on whole data BEFORE CV (leaky)    : 0.893  (n=894)
+C labels = simplified Duval output         : 0.992  (n=563)
+
+Part D: 465 independent labelled records (above attention level). Sources: Fujian=13 IEC TC 10=4 IEEE DataPort=43 NCEPR=351 NE Grid=38 Published cases=16 
+RF trained on 589:      accuracy 0.561
+   Fujian         n= 13  RF 0.231
+   IEC TC 10      n=  4  RF 0.500
+   IEEE DataPort  n= 43  RF 0.674
+   NCEPR          n=351  RF 0.533
+   NE Grid        n= 38  RF 0.711
+   Published cases n= 16  RF 0.812
+Duval Triangle (simplified): 0.501   IEC ratios: 0.314
+
